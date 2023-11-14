@@ -6,4 +6,4 @@
 build
 .DS_Store
 .DS_Store
-app/bin/*bin
+bin
