@@ -10,33 +10,70 @@ package jp.ac.uryukyu.ie.e235723;
  */
 public class Hero {
     private String name;
+    /**
+     * getter
+     * @return String name 敵の名前
+     */
     public String getName() {
         return this.name;
     }
+    /**
+     * setter
+     * @param name String name 敵の名前
+     * 
+     */
     public void setName(String name) {
         this.name = name;
     }
     private int hitPoint;
+    /**
+     * getter
+     * @return int hitPoint 敵のHP
+     */
     public int getHitPoint() {
         return this.hitPoint;
     }
+    /**
+     * setter
+     * @param hitPoint int hitPoint 敵のHP
+     * 
+     */
     public void setHitPoint(int hitPoint) {
         this.hitPoint = hitPoint;
     }
     private int attack;
+    /**
+     * getter
+     * @return int attack 敵の攻撃力
+     */
     public int getAttack() {
         return this.attack;
     }
+    /**
+     * setter
+     * @param attack int attack 敵の攻撃力
+     * 
+     */
     public void setAttack(int attack) {
         this.attack = attack;
     }
     private boolean dead;
+    /**
+     * getter
+     * @return boolean dead 敵の生死状態。true=死亡。
+     */
     public boolean getDead() {
         return this.dead;
     }
+    /**
+     * setter
+     * @param dead boolean dead 敵の生死状態。true=死亡。
+     * 
+     */
     public void setDead(boolean dead) {
         this.dead = dead;
     }
+
     /**
      * コンストラクタ。名前、最大HP、攻撃力を指定する。
      * @param name ヒーロー名
