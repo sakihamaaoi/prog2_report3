@@ -1,6 +1,6 @@
 package jp.ac.uryukyu.ie.e235723;
 
-public class LivingThig {
+public class LivingThing {
     private String name;
 
     public String getName() {
@@ -54,7 +54,7 @@ public class LivingThig {
         this.dead = dead;
     }
     
-    public LivingThig (String name, int hitPoint, int attack) {
+    public LivingThing (String name, int hitPoint, int attack) {
         this.setName(name);
         this.setHitPoint(hitPoint);
         this.setAttack(attack);
@@ -62,21 +62,21 @@ public class LivingThig {
         System.out.printf("%sのHPは%d。攻撃力は%dです。\n", name, hitPoint, attack);
     }
 
-    public void attack(LivingThig opponent){
-        int damage = (int)(Math.random() * attack);
-        if ( getHitPoint() < 0) {
-            this.dead = true;
-            damage = 0;
+    public void attack(LivingThing opponent){
+        if ( getHitPoint() > 0) {
+            int damage = (int)(Math.random() * attack);
+            this.dead = false;
+            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, opponent.getName(), damage);
             opponent.wounded(damage);
+            }
+            
         }
-        else opponent.wounded(damage);
-        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, opponent.getName(), damage);
-        
-    }
+
+    
     public void wounded(int damage){
-        this.hitPoint -= damage;
+        hitPoint -= damage;
         if(this.hitPoint < 0 ) {
-            dead = true;
+            this.dead = true;
             System.out.printf("%sは倒れた。\n", name);
         }
     }
